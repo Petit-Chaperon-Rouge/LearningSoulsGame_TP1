@@ -125,7 +125,7 @@ public class HeroTest {
     public void existSetName() {
         try {
             Class<?> c = Class.forName("Hero");
-            Method m = c.getMethod("setName", new Class[]{String.class});
+            Method m = c.getDeclaredMethod("setName", new Class[]{String.class});
 
             Assert.assertTrue("wrong parameter number (1)", m.getParameterCount() == 1);
         } catch (ClassNotFoundException e) {
@@ -154,7 +154,7 @@ public class HeroTest {
     public void existSetLife() {
         try {
             Class<?> c = Class.forName("Hero");
-            Method m = c.getMethod("setLife", new Class[]{int.class});
+            Method m = c.getDeclaredMethod("setLife", new Class[]{int.class});
 
             Assert.assertTrue("wrong parameter number (1)", m.getParameterCount() == 1);
             Assert.assertTrue("wrong parameter type 'int)", m.getParameterTypes()[0].getName() == "int");
@@ -184,7 +184,7 @@ public class HeroTest {
     public void existSetMaxLife() {
         try {
             Class<?> c = Class.forName("Hero");
-            Method m = c.getMethod("setMaxLife", new Class[]{int.class});
+            Method m = c.getDeclaredMethod("setMaxLife", new Class[]{int.class});
 
             Assert.assertTrue("wrong parameter number (1)", m.getParameterCount() == 1);
             Assert.assertTrue("wrong parameter type (int)", m.getParameterTypes()[0].getName() == "int");
@@ -214,7 +214,7 @@ public class HeroTest {
     public void existSetStamina() {
         try {
             Class<?> c = Class.forName("Hero");
-            Method m = c.getMethod("setStamina", new Class[]{int.class});
+            Method m = c.getDeclaredMethod("setStamina", new Class[]{int.class});
 
             Assert.assertTrue("wrong parameter number (1)", m.getParameterCount() == 1);
             Assert.assertTrue("wrong parameter type (int)", m.getParameterTypes()[0].getName() == "int");
@@ -244,7 +244,7 @@ public class HeroTest {
     public void existSetMaxStamina() {
         try {
             Class<?> c = Class.forName("Hero");
-            Method m = c.getMethod("setMaxStamina", int.class);
+            Method m = c.getDeclaredMethod("setMaxStamina", int.class);
 
             Assert.assertTrue("wrong parameter number (1)", m.getParameterCount() == 1);
             Assert.assertTrue("wrong parameter type (int)", m.getParameterTypes()[0].getName() == "int");
